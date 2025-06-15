@@ -732,6 +732,10 @@ async def copy_message_with_chat_id(app, userbot, sender, chat_id, message_id, e
                     result = await app.send_audio(
                         target_chat_id, file, caption=final_caption, reply_to_message_id=topic_id
                     )
+                elif msg.video:
+                    result = await app.send_video(
+                        target_chat_id, file, caption=final_caption, reply_to_message_id=topic_id
+                    )
                 elif msg.voice:
                     result = await app.send_voice(
                         target_chat_id, file, reply_to_message_id=topic_id
